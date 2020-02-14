@@ -26,14 +26,15 @@ class TechList extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>{this.state.newTech}</h1>
-        {this.state.techs.map(tech => (
-          <TechItem
-            key={tech}
-            tech={tech}
-            onDelete={() => this.handleDelete(tech)}
-          />
-        ))}
+        <ul>
+          {this.state.techs.map(tech => (
+            <TechItem
+              key={tech}
+              tech={tech}
+              onDelete={() => this.handleDelete(tech)}
+            />
+          ))}
+        </ul>
         <input
           type='text'
           onChange={this.handleInputChange}
@@ -44,5 +45,4 @@ class TechList extends Component {
     );
   }
 }
-
 export default TechList;
